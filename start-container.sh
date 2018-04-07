@@ -28,7 +28,8 @@ do
 	                --hostname hadoop-slave$i \
 	                kiwenlau/hadoop:1.0 &> /dev/null
 	i=$(( $i + 1 ))
-done 
+done
 
+sudo docker cp hadoop hadoop-master:/
 # get into hadoop master container
 sudo docker exec -it hadoop-master bash
